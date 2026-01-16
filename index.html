@@ -1,52 +1,190 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 1st Birthday Meghanshika 🎉</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 1st Birthday Meghanshika</title>
 
-<style>
-body{
-  margin:0;
-  background: linear-gradient(#ffe6f0, #fff);
-  font-family: 'Comic Sans MS', cursive;
-  text-align:center;
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
 
-h1{
-  color:#ff4f9a;
-  margin:20px 10px;
-  font-size:28px;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Baloo 2', cursive;
+    }
 
-.gallery{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #fff1f7, #fce4ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      text-align: center;
+    }
 
-.gallery img{
-  width:90%;
-  max-width:320px;
-  margin:12px 0;
-  border-radius:20px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
-</style>
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #e91e63;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #ff6f91;
+    }
+
+    .btn {
+      background: #ff6f91;
+      color: #fff;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .card {
+      display: none; /* Hidden initially */
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 25px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+      text-align: center;
+    }
+
+    .flower {
+      position: absolute;
+      width: 60px;
+      opacity: 0.6;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .flower.f1 { top: -10px; left: -10px; }
+    .flower.f2 { bottom: -10px; right: -10px; animation-delay: 2s; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .baby-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 6px solid #ffd1dc;
+      object-fit: cover;
+      margin: 20px auto;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px 0;
+      margin-bottom: 15px;
+    }
+
+    .gallery img {
+      width: 110px;
+      height: 110px;
+      border-radius: 15px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .message {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 15px 0;
+    }
+
+    footer {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: #999;
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>🎀 Happy 1st Birthday Meghanshika 🎀</h1>
+  <!-- Intro Page -->
+  <div class="intro" id="intro">
+    <h1>🎀 Happy 1st Birthday 🎀</h1>
+    <h2>Meghanshika</h2>
+    <button class="btn" onclick="showSurprise()">🎁 Open Your Surprise!</button>
+  </div>
 
-<div class="gallery">
-  <img src="photos/meghu1.jpg">
-  <img src="photos/meghu2.jpg">
-  <img src="photos/meghu3.jpg">
-  <img src="photos/meghu4.jpg">
-  <img src="photos/meghu5.jpg">
-</div>
+  <!-- Surprise Card -->
+  <div class="card" id="card">
+    <!-- Floating flowers -->
+    <img src="https://i.imgur.com/JN8XK6J.png" class="flower f1" alt="flower">
+    <img src="https://i.imgur.com/JN8XK6J.png" class="flower f2" alt="flower">
+
+    <!-- Main baby photo -->
+    <img src="megha1.jpg" class="baby-img" alt="Meghanshika">
+
+    <!-- Photo gallery -->
+    <div class="gallery">
+      <img src="megha2.jpg" alt="Meghanshika">
+      <img src="megha3.jpg" alt="Meghanshika">
+      <img src="megha4.jpg" alt="Meghanshika">
+    </div>
+
+    <p class="message">
+      One year of smiles, giggles, and endless joy 💕<br>
+      May your life be filled with love, laughter, and beautiful dreams.
+    </p>
+
+    <footer>Made with ❤️ for Meghanshika</footer>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c1a30c6d82.mp3?filename=happy-birthday-piano-6337.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function showSurprise() {
+      // Hide intro
+      document.getElementById('intro').style.display = 'none';
+      // Show card
+      document.getElementById('card').style.display = 'block';
+      // Play music
+      const music = document.getElementById('bgMusic');
+      music.play();
+      // Confetti
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
 
 </body>
 </html>
