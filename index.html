@@ -60,16 +60,38 @@
     }
 
     .card {
-      display: none; /* Hidden initially */
-      width: 100%;
-      max-width: 420px;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 25px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      position: relative;
-      text-align: center;
-    }
+  display: none; /* Hidden initially */
+  width: 95%;          /* Use most of the screen width */
+  max-width: 1200px;   /* Limit max width on large screens */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.baby-img {
+  width: 90%;          /* scale with card */
+  max-width: 500px;    /* max size on big screens */
+  height: auto;
+  border-radius: 20px;
+  border: 6px solid #ffd1dc;
+  object-fit: cover;
+  margin: 20px auto;
+}
+
+.gallery img {
+  width: 30%;           /* each photo takes 30% of card width */
+  max-width: 250px;     /* optional max */
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
 
     .flower {
       position: absolute;
@@ -88,9 +110,10 @@
     }
 
     .baby-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 20px;
       border: 6px solid #ffd1dc;
       object-fit: cover;
       margin: 20px auto;
@@ -102,11 +125,12 @@
       overflow-x: auto;
       padding: 10px 0;
       margin-bottom: 15px;
+      justify-content: center;
     }
 
     .gallery img {
-      width: 110px;
-      height: 110px;
+      width: 150px;
+      height: 150px;
       border-radius: 15px;
       object-fit: cover;
       flex-shrink: 0;
@@ -114,7 +138,7 @@
     }
 
     .message {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #555;
       line-height: 1.5;
       margin: 15px 0;
@@ -132,9 +156,9 @@
   <!-- Intro Page -->
   <div class="intro" id="intro">
     <h1>🎀 Happy 1st Birthday 🎀</h1>
-    <h2>Meghanshika</h2>
-    <!-- Main photo on first page -->
-    <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/meghu1.jpg" 
+    <h2>From your lovely Pinni wishing you a Happy Birthday</h2>
+    <!-- Main big photo -->
+    <img src="299fbe6a-b7b4-47b1-8585-536fea31b5d2.png" 
          class="baby-img" 
          alt="Meghanshika">
     <button class="btn" onclick="showSurprise()">🎁 Open Your Surprise!</button>
@@ -146,16 +170,16 @@
     <img src="https://i.imgur.com/JN8XK6J.png" class="flower f1" alt="flower">
     <img src="https://i.imgur.com/JN8XK6J.png" class="flower f2" alt="flower">
 
-    <!-- Main baby photo inside card (optional repeat) -->
+    <!-- Optional main baby photo inside card -->
     <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/megha1.jpg" 
          class="baby-img" 
          alt="Meghanshika">
 
-    <!-- Photo gallery -->
+    <!-- Gallery with 3 photos -->
     <div class="gallery">
-      <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/meghu2.jpg" alt="Meghanshika">
-      <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/meghu3.jpg" alt="Meghanshika">
-      <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/meghu4.jpg" alt="Meghanshika">
+      <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/megha2.jpg" alt="Meghanshika">
+      <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/megha3.jpg" alt="Meghanshika">
+      <img src="https://raw.githubusercontent.com/Sindhugoud7/meghanshika-birthday/main/photos/megha4.jpg" alt="Meghanshika">
     </div>
 
     <p class="message">
@@ -176,14 +200,12 @@
 
   <script>
     function showSurprise() {
-      // Hide intro
       document.getElementById('intro').style.display = 'none';
-      // Show card
       document.getElementById('card').style.display = 'block';
-      // Play music
+
       const music = document.getElementById('bgMusic');
       music.play();
-      // Confetti
+
       confetti({
         particleCount: 150,
         spread: 70,
